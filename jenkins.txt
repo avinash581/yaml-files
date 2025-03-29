@@ -1,0 +1,69 @@
+
+
+pipeline 
+	- All the pipeline code is defined in groovy format (java).
+	- we can define our pipeline code in ways 
+			1. Inline pipeline script.
+			2. we can write pipeline in a file called Jenkinsfile and we call it from a SCM.
+	
+	- The default stage of pipeline is 'Declarative: Checkout SCM' in this stage 
+	  jenkins will pull the latest Jenkinsfile	
+	
+	What are the types of pipeline in jenikns 
+		1. scripted pipeline
+			- old way/ traditional way of defining pipeline code 
+			- Most of the operation we need to write in code which is groovy.
+			- we define all scripted pipeline in node block 
+				
+				node {
+					.....
+					.....
+				}
+				
+		2. declarative pipeline
+			  - new way of writing jenkins groovy pipeline
+			  - all code is defined inside the pipeline block	
+				
+				pipeline {
+						.....
+						.....
+				}
+				
+		
+	Jenkinsfile example 
+		pipeline {
+			agent any 
+			stages {
+				stage('BUILD') {
+					steps {
+						sh '''
+							#!/bin/bash 
+							echo "This is a fist build stage in Jenkinsfile"
+						'''
+					}
+				}
+				stage('TEST1') {
+					steps {
+						sh 'echo "fist test stage in Jenkinsfile"'
+					}	
+				}
+				stage('TEST2') {
+					steps {
+						sh 'echo "Second test stage in Jenkinsfile"'
+					}	
+				}
+				stage('DEPLOY') {
+					steps {
+						sh 'echo "Final DEPLOY stage in Jenkinsfile"'
+					}
+				}
+			}
+		}
+		
+IQ: Whis is Jenkinsfile ?
+	Whis are types of pipeline ?
+	How to define a pipeline job ?
+		
+Assignment: Try a sample jenkins pipeline job ?
+		    Install blueocean plugin . 
+			

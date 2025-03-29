@@ -1,0 +1,131 @@
+tag  ---> name given to set of versions of files and dirs. it's easy to remember and 
+it indicates milestone of project.
+
+git tag   ---> list tags
+
+git tag tagname ---> tag it
+
+git tag -d tagname  
+
+we can't edit tags 
+
+how do you create branch from tag?
+git branch branch-name tagname
+
+=====================================================================
+
+git cherry-pick is used to merge specific commit on the branch
+git cherry-pick commitID1 commitID2
+
+git rebase ---> it's nothing but merge. one branch will get added to tip of another branch.
+
+git rebase branch
+
+diff between merge and rebase
+
+=================================================================
+how do you squash (combine multiple commits) commits?
+
+git rebase -i HEAD~4  
+
+(it will squash latest 4 commits )
+
+s or squash --> squash
+p or pick ---> it will retain that commit 
+============================================================================================
+
+staging area or index area ---> intermediate area where we can save changes 
+
+git repo----> committed to specific branch and commit id will get created 
+
+=============================================================================================
+git reset HEAD ---> will move files from staging area back to workspace
+
+----------------------------------------------------------------------------------
+
+
+git stash :
+
+if you are working on one branch, in between if you get any critical which needs to be fixed on another branch.
+in this case, before I switch to another branch, we need to stash it from current branch (stash will store it in temprory area). After completing work on another branch.
+switch it to back to current branch and get stashed changes using git stash pop.
+
+
+create some files
+git add *
+git stash 
+git checkout branch
+after completing critical work another branch switch it back to current branch
+git checkout current-brach
+git stash pop
+git reset HEAD
+
+-=================================================================================================================
+
+explain merge conflict 
+Merging Conflict Will occur when the same peace of code is changed on 2 
+different branches, when we try to merge those two brnaches, 
+then merging conflict will occur,
+ To resolve this issue, I don‘t know whose change should I take 
+to merge , so I contact developers changes the code, person 
+who modified code of branch1 and branch2. Then they will 
+decide and tell us whose changes should I take into merge. Then I take that change and I commit it. I get to know who 
+modified the code on branch1 and branch2 using git log 
+command.
+
+===============================================================================
+Git clone
+Bringing the remote repo to local workspace for the first time 
+called as git clone.
+Git clone user@servername: /home/path/central_repo/
+
+Git push
+Moving the changes from workspace to remote repo or central 
+repo
+ Git push user@severname: /path.././central_repo
+
+Git pull
+Bring the changes from remote repository and merges to local 
+repo automatically.
+Git pull user@servername: /home/./path/central_repo
+
+fetch
+Bring the changes from remote repo and stores it on a separate 
+branch, you can review the changes and merge it to local repo if it is 
+required.
+Git fetch user@servername:/home.//./central_repo/
+
+Git pull = git fetch + git merge
+
+I am not able to push code to central repo. what is the reason?
+other developer might have changed the same line of code in different way and push already. 
+so if I am trying to push to central repo, I will not able to push.
+in this case, I need to pull it and merge conflict will occur in the local workspace, resolve it,push it back to central repo
+
+=============================================================================================================================================
+
+bare repo:
+
+its central repo. we can push and pull code. we can't run any git operations here
+git init --bare
+
+-------------------------------------------------------------------
+
+non-bare: it's local repo where we can run all git operations. 
+when we clone central repo to workspace. it becomes local repo automatically
+git init
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
