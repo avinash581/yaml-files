@@ -1,0 +1,473 @@
+Virtualization (VM)
+	- VM is way of running virtual OS on top a host OS using a special software called Hyperviser.
+	- VM directly shares the harware of the host OS. 
+
+						VM 					vs 			Containerisation 
+	1. Virtualization at hardware level  		1. Virtualization at OS level 
+	2. Heavyweight - consume more host 			2. Lightweight
+	   resources 	
+	3. VM useses hypervisor 					3. containerisation tool is used 
+	4. limited performace - Boot up time        4. Native performace - usualy boot 
+		is more which is in minutes 			   fast in seconds.
+	5. Cosumes more storage 					5. Shres OS storage means only uses 
+												   required storage.
+	6. Supports all OS 							6. Supports Linux 												
+	   
+host machine 
+	This is the machine in which docker is running 
+
+Register to docker hub
+	
+Pull some public images from docker hub 
+	docker pull <image_name>:<tag>
+	
+To list images in the host machine 
+	docker images
+
+To delete images from the host machine
+	docker rmi <image_name>
+	docker rmi <image_id>
+
+To delete all images 
+	docker rmi $(docker images -q)
+	
+To create a container 
+	docker run -it -d <image_name>
+	
+	-it - Interactive tty 	
+	-d - detached mode (when ever I create a container by default it will auto login 
+		if I want to create container in backgroung I need to use -d)	
+  	
+To list running container 
+		docker ps
+		docker container ls	
+		
+To list all containers 
+		docker ps -a
+
+To stop container
+		docker stop <container_name>
+			(or)
+		docker stop <container_id>	
+		
+To delete containers	
+		docker rm <container_id1>	 <container_id2> ..... <container_idn>	
+		docker container rm <container_id1>	 <container_id2> ..... <container_idn>
+		
+To create a container with name 
+			docker run -it -d --name=my_alpine alpine
+			docker run -it -d --name my_alpine alpine
+
+To delete a running container
+		docker rm -f <container_name/container_id>
+		
+		docker stop <container_name/container_id> | xargs -I{} docker rm "{}"
+				(or)
+		docker rm $(docker stop <container_name/container_id>)
+		
+To list all stopped containers 
+		docker ps -a --filter status=exited
+		
+To list only ids of all stopped 
+		docker ps -aq --filter status=exited
+		
+To delete all stopped containers
+		docker rm $(docker ps -aq --filter status=exited)	
+
+To delete all running container 
+	1. get ids of running
+		docker ps -q
+	2. stop running containers
+		docker stop $(docker ps -q)
+	Final delete the running containers
+		docker rm $(docker stop $(docker ps -q))
+		
+To login to a container 
+		docker attach <container_name/container_id>	
+		
+		docker exec -it <container_name/container_id> /bin/sh
+		
+namespaces
+	- Docker uses linux namespaces to provide isolated workspace called containers.
+	- When a container is created, docker creates a set of namespaces for it and provides 
+	  a layer of isolation. 
+	- Each container runs in a separete namespace and its accesses is limited to that 
+	  namespace.	
+	
+	To list namespaces 
+		lsns 
+		
+	cgroups (control groups)
+
+		Linux OS uses cgroups to manage the available hardware resources 
+		such as cpu, disk, I/O, Netwroking, memory. we can control the access and also we 
+		can apply the limitations.
+		
+		To list cgroups 
+			lscgroup
+			
+	pid (ps -ef)
+	   	namespace for managing process (Process Isolation)
+	
+	net (ifconfig)
+		namespace for managing network interfaces.
+		
+	ipc (interprocess communication)
+		manages the process communication
+		
+	user 
+		namespace for non-root user on linux 
+		
+	mnt 
+		namespace for managing filesystem mount points.
+	
+	uts (Unix Timesharing system)
+		which isolates kernel and version identifiers, time bonding of process.
+
+Containers 
+		- A container is a set of isolated processes and its resources.
+		- In linux docker achives isolation using linux namespaces.
+		
+		Docker defination: 
+			- A container is a standard unit of software that packages up code and 
+			  all its dependencies so the application runs quickly and reliably from one computing environment to another.
+		
+		Is a way of running a process in isolation. Each container shares the same host 
+		OS kernel.	
+		
+Docker custom image
+		Dockerfile is used to create a custom images by using any stock images or other
+		images as base images.
+		In Dockerfile we can write some set instructions to update any exisiting image.
+	
+	FROM 
+		FROM must be the forst non-command instruction in Dockerfile
+		FROM is used to specify which images to use as base images on top of this 
+		images all the next instructions will be executed.
+		
+			FROM <image_name>:tag
+	
+	RUN 
+		using this we can execute normal shell command or the commands supported by the 
+		base image.
+		
+	COPY and ADD 
+		- Both copy and add is used to copy files and directories from <src> host machine to <dest>
+		  inside the custom image filesystem.
+		
+		- The soruce path to copy files from is always evaluated with refrence to Dockerfile. 
+		
+		ADD supports extra formats 
+			1) If the soruce is a compressed file, ADD will automatically uncompress it in the 
+				destination. 
+			2) 	If the soruce is a link to a file, ADD will automatically download it in the 
+				destination.
+		
+	CMD and ENTRYPOINT
+		shell format 
+			CMD "ls -lrt"
+			ENTRYPOINT "ls -lrt"
+			
+		EXEC Format 
+			CMD ["ls","-lrt"]
+			ENTRYPOINT ["ls","-lrt"]
+			
+		Both CMD & ENTRYPOINT are used to define the execution command of the container
+		which is going to be created from this image.
+		
+		If we use multiple CMD or ENTRYPOINT in same Dockerfile only the latest one 
+		will be considered.	We can use only one CMD and ENTRYPOINT in a single Dockerfile.
+			
+		CMD command can be completely overridden from the runtime means if we specify any command
+		with docker run it will be considered over CMD command.
+			
+		ENTRYPOINT command can not be overridden from the runtime means if we specify any command
+		with docker run it will become parameter to the ENTRYPOINT command.	
+		
+		If we use both CMD and ENTRYPOINT, ENTRYPOINT will get the highest priority and whatever 
+		the command ENTRYPOINT got will be executed abd the command specified through CMD will 
+		become parameters to ENTRYPOINT command.
+		
+Assignment: Read on SHEEL, MAINTAINER and LABEL.		
+
+		ENV & ARG
+			ENV 
+				The ENV instruction sets the environment variable inside the image 
+				and the container which is created from this image 
+				
+					ENV <variable_name> <value>
+					ENV <variable_name1>=<value1> <variable_name2>=<value2> .... <variable_namen>=<valuen>
+				
+				To create environment variable at runtime 
+					docker run -e <variable_name>=<value> -e <variable_name>=<value>
+					
+				To create environment variable from a file 
+					docker run --env-file .env 
+					
+			ARG 
+				Using ARG we can pass parameters to Dockerfile as user inputs.
+				
+					ARG <arg_name>=<default_value> 
+					
+		WORKDIR 
+			WORKDIR <path>
+				set the working directory for all the instructions that follow it
+				such as RUN SHELL CMD ENTRYPOINT COPY ADD
+			
+		EXPOSE 
+			EXPOSE <port>
+			Allows containers to talk to eachother with in the same network.
+			This is to specify and inform the docker that the service listens to this 
+			port.
+			
+To build a dockerfile with different name and location 
+	docker build -t my_ubuntu -f ./Dockerfile_path .				
+	
+How to connect to remote registry of docker hub 
+		docker login 
+	TO push an image to repository of docker hub account
+		docker push <username>/<repository_name>:<tag>
+		
+	To tag an image 
+		docker tag <image_name>:<tag> <new_image>:<new_tag>
+		
+Dangling image 
+	Images which are created while creating actual image layers and which has 
+	no relationship to any tagged images, they no longer serve any purpose and 
+	they consume lot of disk space.
+	
+	To list dangling images 
+		docker images -f dangling=true 
+		
+	To delete dangling images 
+		docker image prune 
+		
+	To delete all stopped containers
+		docker container prune
+
+		
+Assignment: docker system prune 
+			
+To check the consol log of a container 
+	docker logs <container_name/container_id>	
+
+To check the memory used by containers 
+	docker stats 
+	
+Publish 
+	PUBLISH = EXPOSE + outside world 
+	
+	Publish will bind the container port to the host machine port so that we 
+	can access the appliction published port outside the host machine binded port.
+	
+	I can publish a port only at the runtime.
+	
+	docker run --publish 
+	docker run -p <host_port>:<container_port> -p <host_port1>:<container_port1>
+	
+	-P Publish all 
+		all the services port in a container will be binded to host machine only if the 
+		port is EXPOSED.
+	
+	Range of ports 
+		-p 8080-8090:8091-8101
+		1. both host and container ports are specified as a range.
+		2. Total number of host ports should be same as the total number container ports.
+		
+		-p 8080-8090:8080
+		
+	Direct IP publish 
+		port to port 
+			ip:<host_port>:<container_port>
+			ip::<container_port>
+
+Docker volumes 
+	- AS the layers inside the image are readonly means once the image is created 
+	  we cannot change/edit the layers.
+	- Containers create a top most read/write layer and we can save all the runtime data 
+	  but if the container is delete the data will also gets deleted.
+	- To persist the data even after the deleteion of the container we need to use 
+	  docker volumes.
+
+	Bind mounts 
+		we can mount file or directory from the host machine to the container.
+		
+		docker run -v <host_path>:<container_path>
+		
+		To mount multile files/directory use multiple -v 
+		
+	volumes
+		- These are docker managed folders and we use docker commands to manage these volumes.
+		- Volumes are easier to manage, backup or migrate than bind mounts.
+		- Volume supports many drivers which means we can mount many type of 
+		  filesystem to container.	
+		- Volume is the most clean way of mounting same filesystem to different containers.
+		- Default location of docker volumes is /var/lib/docker/volumes
+		
+			docker run -v <volume_name>:<container_path>
+		
+		To list volumes
+			docker volume ls 
+		
+		To delete volumes
+			docker volume rm 
+		
+		To create volumes
+			docker volume create 
+				
+To save the changes of container to a image 
+	docker commit <container_id> <image_name>			
+		
+Assignment: docker save vs docker export 
+			what happens if we mount multile volumes to same container same location.
+
+Docker networks 
+	There are 3 types of default network create by docker at the time of instalation.
+		1. Bridge 
+		2. Host 
+		3. None
+		
+	Bridge 
+		- This is a private internal network created by docker on the host machine by name 
+		  docker0	
+		- All the containers which are created without any network configuration by 
+		  default get attached to default bridge network.
+		- By deafault all the container which are in the same bridge network
+		  can communicate with each other (we can ping with ip).
+		- In default bridge containers cannot communicate with the container name 
+		  they can only communicate using the IP address.
+		  
+		custom bridge
+			To create a bridge network
+				docker network create --driver bridge my_bridge 
+				
+			To create container in other network 
+				docker run --net my_bridge ....
+			
+		- In custom bridge containers can communicate with eachother using container name 
+		  and also IP address.	
+				
+		To have communication between containers which are in different networks
+			docker netwrok connect <network_name> <container_name>
+			
+			example: docker network connect my_bridge bindmount1
+			
+	Host 
+		- This dirver removes the network isolation between docker and the host 
+		- The container is direcctly connected to host machine network without any 
+		  extra layer of network.
+		- Shares same TCP/IP stack and namespace of the host machine.	
+		- All the network interfaces which are there in host machine are accessable by this 
+		  container.
+		
+	None 
+		- Containers are not attached to any network by docker.
+		- All the required network configurations need to be done manually.
+		- The host or any other container won't be able to communicate with this
+		  container untill a custom network is configured.
+		- The containers won't get any IP address. The only IP it has is its own loopback 
+		  address (localhost)	
+	
+	Docker Architecture 
+		Docker Daemon 
+			- A background process that manages docker images, containers, network and volumes.
+			- This Daemon constantly listens for docker API request and processes them.
+		
+		Docker REST API 
+			- API which is used by applictions to interact with the docker daemon. 
+			
+		Docker CLI 
+			- It is a command line interface for interacting with docker daemon through
+			  REST api.
+		
+		Docker Objects 
+			
+Benifits of Docker 
+	
+	Flexible: 
+		Complex applictions cab be divided and containerised in small compenets called 
+		microservice. 
+	
+	Lightweight: 
+		containers shares host kernel and never uses a dedicated OS. More convinent way 
+		of using host resources than VM.
+
+	portable: 
+		we can build images anywhere and then deploy to cloud, run anywhere.
+		
+	scalable:	
+	
+	Standard: Docker created the industry standard for containers, so they could be portable anywhere
+	Lightweight: Containers share the machine’s OS system kernel and therefore do not require an OS per application, driving higher server efficiencies and reducing server and licensing costs
+	Secure: Applications are safer in containers and Docker provides the strongest default isolation capabilities in the industry	
+	
+States of conatiner / Lifecycle of container 
+	1. Created - if container is newly created and container is not yet started.
+	2. Running - A currently running container. It means there is no problem 
+				 with container to run the process.
+	3. Exited - A container ran and completed ot executiom with failure.
+	4. paused - A container whose process have been paused. (we can unpause the container)
+	5. Dead - if docker daemon tried and failed to stop a container (host ram full)
+	6. Restarting - container will be in the phase of retarting the main process.
+ 	
+Multistage build 
+	How to optimize docker build process ?
+	How to reduce the size of the docker image or cotainer ? 
+
+	After docker 1.6 version docker released this option.
+	1. There are 2 problems with the normal build process 
+			1. Size: challenge is to keep the image and its containers size as minimal as possible.
+			2. larger the surface area more the application is vurnalable to attacks. 
+	
+		- Multistage build allows us to define multiple FROM in same Dockerfile.
+		- Dependency between multile FROM is maintained by naming FROM using 
+		  AS keyword and we can refer this name in another FROM.
+
+				FROM <base_image> AS <STAGE_NAME>
+				
+		- Only the final FROM image is created leaving back all the other FROM.
+		- Copy only the required files from the named FROM stage like below.
+				FROM final_build
+				COPY --from <STAGE_NAME> <src_named_stage> <dest>
+	
+	2. Always try to use the slim / alpine / stretch version of base image instead 
+	   od using the fully loaded base image.
+	   
+	exapmle: https://github.com/jaintpharsha/docker_multi_build.git
+	
+	
+docker-compose 
+	Installation 
+		1. sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		2. sudo chmod +x /usr/local/bin/docker-compose
+		3. sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+		
+	- docker-compose is a tool for defining and running multile container docker application with 
+	  a single command.
+	- We use YAML file to do docker related configurations then with a single command 
+	  we can execute this YAML file to create docker objects defined in this file.	
+	  
+	docker-compose.yml 
+		version: "3.8"
+		services:
+			jenkins:
+				image: jenkins/jenkins:lts
+				container_name: dc-jenkins
+				ports:
+					- "8080:8080"
+					- "5000:5000"
+				networks:
+					- my_brid
+			alpine:
+				build: .
+				container_name: dc-ubuntu
+				volumes:
+					- my_vol:/home
+				networks:
+					- my_brid
+		networks:
+			my_brid:
+				driver: bridge
+
+		volumes:
+			my_vol: {}

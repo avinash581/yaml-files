@@ -1,0 +1,282 @@
+ls  ---> list files and dirs
+pwd --> present working dir
+mkdir temp  --> create dir
+cd temp/  --> change directory 
+
+cd ..  --> come out of present directory
+cd ../..
+
+cd ../../..   ---> come out of 3 dirs
+
+touch filename ---> used to create empty file
+
+ls -lt  --> list files with long format and time. recently created files displayed at top
+
+ls -lrt  --> recently created files displayed at the bottom
+
+date --> shows system date
+
+cat filename --> display content of a file
+
+-----vi editor---------------------
+vi filename  --> used to edit file 
+
+esc i ---> insert mode
+
+esc :wq!  --> save content of a file 
+
+w --> write and q --> quit 
+! --> forcefull quit
+
+
+esc :q!  --> just quit without saving content of a file
+
+how to replace string in a file?
+
+esc :%s/linux/windows/g
+
+replace string only in 2nd line ---> esc :2s/linux/windows/g
+
+replace string from 2nd to 4th line
+esc :2,4s/linux/windows/g
+
+replace string from 2nd line to end of a file
+esc :2,$s/linux/windows/g
+
+replace only in the last line
+esc :$s/windows/linux/g
+
+set line numbers
+
+esc :set nu
+
+remove line numbers
+
+esc :set nonu
+
+move cursor to particular line 
+
+esc :3
+
+delete particular line 
+
+esc dd
+
+how to search particular string
+
+esc :/string
+----------------------------------------------------------
+cp is used to copy files or directories.. if file already exists, it will overwrite
+
+cp file1 file2  ---> copy one file to another
+ 
+
+cp file1 temp/temp1/temp2  --> copy files to directory
+
+cp -r dir1 temp/temp1/temp2  --> copy one dir to another 
+---------------------------------------------------------------------------------------  
+how do you rename file?
+
+mv file1 file_1
+
+mv --> used to move files or dirs from one dir to another 
+
+mv file2 dir1/dir2/dir3
+
+rename dir
+
+mv temp1 temp_2
+
+mv /home/ec2-user/temp_2/temp1/test1 .  ----> move test1 back to present dir
+
+sudo yum install tree ----> to install any command on ec2 instance 
+---------------------------------------------------------------------------------------------------
+
+chmod is used to change permission of a file.
+
+chmod 777 filename ----> full permission for owner, group and others
+
+rwxrwxrwx
+-------------------------------------------------------------
+421
+rwx
+---------------------------------
+permission for a file should look like this
+ 7  5  5
+rwxr-xr-x
+
+chmod 755 filename
+-------------------------------------------------
+
+if chmod 655 filename 
+
+rw-r-xr-x
+
+change permission of multiple files 
+
+
+chmod 700 file1 test1 test2
+---------------------------------------------------------------------
+How do you chnage permission of a directory
+
+chmod -R 777 dir1
+
+-R is for recursive. All files and sub dirs permisisons inside directory  will be set to 777
+-------------------------------------------------------------------
+
+we change permission 
+
+chmod u+rwx filename
+
+u--> user or owner 
+g--> group
+o --> others
+a --> all
+
+chmod u+rwx,g-w,o-x file_1
+
+add full permission to owner, remove write permission from group and execute permission from others 
+
++ --> add permission
+-  --> remove permission 
+-------------------------------------------------------------------------------------------------------------
+
+chown is used to chnage ownership of a file or directory. owner of a file or root should change ownership.
+
+chown abc filename 
+
+abc is new owner 
+
+
+if abc belongs to different group 
+
+chown abc:groupname filename
+--------------------------------------------
+chsh --> is used to change default shell 
+
+chsh csh  --> c shell
+
+chsh ksh  ---> k shell
+chsh bash --> bash shell 
+---------------------------------------------------------------------
+
+> (redirect) --> used to store output of command to file
+
+ls -lrt > log1
+
+if file alreayd exists, it will overwrite content of a file.
+--------------------------------------------------------------------------
+
+>> (append)  --> used to attach output of a command to end of file.
+
+head -4 filename >> log1
+
+if file already exists, it will not overwrite content of a file.
+------------------------------------------------------------------------
+head is used to display first portion of a file
+
+head -4 filename ---> 1st 4 lines
+
+head filename --> first 10lines by default
+
+head -12 filename ---> 1st 12 lines 
+
+---------------------------------------------------------------
+tail is used to dispaly last portion of a file
+
+tail -1 filename ---> last one line
+
+tail filename ---> last 10 lines by default
+
+tail -12 filename ---> last 12lines of filename 
+--------------------------------------------------------------------------------
+
+wc is used to count number of lines, words and chars.
+
+
+
+wc filename
+
+wc -l filename ---> used to only lines
+
+wc -w filename --> print only words
+
+wc -c filename --> count only chars
+-----------------------------------------------------------------------------------
+
+
+| (pipe) is used to pass ouput of one command to next command as input.
+
+ls -lrt | head -4 
+
+display only 4th line
+head -4 file1 | tail -1
+
+display 99th line of a file
+head -99 file1 | tail -1
+
+display 2nd last line
+tail -2 file1 | head -1
+
+
+how do you count number of words in 7th line of a file
+head -7 file1 | tail -1 | wc -w
+how do you count number of words in 7th line of a file?
+head  -7 file1 | tail -1 | wc -w
+
+--------------------------------------------------------------------------------------------------
+echo "hi"
+
+echo -e "Hi\n how r u"
+------------------------------------------------------------------------
+
+more is used to display content of a file pagewise
+
+more filename
+--------------------------------------
+
+less ---> used to display content of a file pagewise, but u can scroll up and scroll down
+
+less filename
+---------------------------------------------------------------------------------
+grep is used to search word or string in a file
+
+grep "pattern" filename
+
+grep -w "word" filename  --> search particular word only
+
+how do you search multiple patterns in file
+
+grep -e "linux" -e "ubuntu" -e "os" file1
+
+or
+egrep
+
+
+search lines which start with particular string or word
+
+grep "^we" file1
+
+how do you display lines end with "os"
+
+grep "os$" file1
+
+grep -c "linux" test1  ---> count number lines which have that pattern
+
+how do you display which all files have particular pattern
+ grep -R -l "linux" *
+
+
+grep -i "Linux" test1
+
+-i indicates case insensitive
+
+how do you display lines which don't have that pattern
+grep -v "linux" test1
+
+
+print lines with line number 
+grep -n "linux" file1
+-----------------------------------------------------------------------------------------------------------
+
+ 

@@ -1,0 +1,566 @@
+ls ---> list files and directories 
+
+touch filename ----> create empty file
+
+mkdir dirname---> create directory
+
+ls -l ---> list files and dirs with long format
+
+ls -lt ----> list recently created files and dirs at the top 
+
+ls -lrt ---> recently created files and dirs at the bottom
+
+ls -a ---> used to dispaly hidden files 
+
+cat file1 ---> used to display content of file 
+
+pwd ---> present working dir
+
+cd dir1  --> change dir
+
+cd ..  --> come back from one dir
+
+cd ../.. --> two steps back
+---------------------------------------------------------------------------------------
+vi --> editor used to edit files
+
+vi file1
+
+ESC i ---> insert mode 
+
+Esc :wq!  ---> save content of a file
+
+ESC :q! ---> quit without saving content of file
+
+
+how do you replace string using vi editor?
+ESC :%s/linux/windows/g 
+
+replace string only in 1st line
+ESC :1s/linux/windows/g
+
+replace string from 1st to 3rd line 
+ESC :1,3s/linux/windows/g
+
+replace string only in the last line
+ESC:$s/linux/ubuntu/g
+
+
+replace from 5th to last line
+ESC:5,$s/linux/windows/g
+
+set line number 
+ESC: set nu
+
+remove line number 
+ESC: set nonu
+
+move cursor to particular 
+
+ESC: 2  ---> cursor will moved to 2nd line
+
+delete whole line
+ESC dd
+
+--------------------------------------------------------------
+
+cp file1 file2  --> used copy one file to another 
+
+cp -r dir1 dir2 ---> copy one dir to another
+
+r ---> recursive 
+
+cp file1 dir1/dir2/dir3  ---> copy file to particular dir
+
+-----------------------------------------------------------
+
+how do you rename file?
+
+mv file1 file_1
+
+mv --> used to move files or dirs from one dir to another 
+
+mv file2 dir1/dir2/dir3
+
+rename dir
+
+mv temp1 temp_2
+
+mv /home/ec2-user/temp_2/temp1/test1 .  ----> move test1 back to present dir
+
+sudo yum install tree ----> to install any command on ec2 instance 
+
+tree --> display tree structure of present dir
+
+-----------------------------------------------------
+chmod is used to change permission of a file.
+
+chmod 777 filename ----> full permission for owner, group and others
+
+rwxrwxrwx
+-------------------------------------------------------------
+421
+rwx
+---------------------------------
+permission for a file should look like this
+ 7  5  5
+rwxr-xr-x
+
+chmod 755 filename
+-------------------------------------------------
+
+if chmod 655 filename 
+
+rw-r-xr-x
+
+change permission of multiple files 
+
+
+chmod 700 file1 test1 test2
+---------------------------------------------------------------------
+How do you chnage permission of a directory
+
+chmod -R 777 dir1
+
+-R is for recursive. All files and sub dirs permisisons inside directory  will be set to 777
+-------------------------------------------------------------------
+
+umask is used to set default permission on system.
+
+umask 777 ---> no permission at all
+umask 000  ---> full permission
+
+---------------------------------------------
+
+I need to set default permssion of rwxr-xr-- =754 when create new files 
+
+777
+754
+---
+023
+-----
+  umask 023
+--------------------------------
+
+defaul permission r-xr--r-- =544. what umask command should i run.
+
+777
+544
+---
+233
+---
+ umask 233
+-------------------------------------------------------------------
+chown is used to chnage ownership of a file or directory. owner of a file or root should change ownership.
+
+chown abc filename 
+
+abc is new owner 
+
+
+if abc belongs to different group 
+
+chown abc:groupname filename
+--------------------------------------------
+chsh --> is used to change default shell 
+
+chsh csh  --> c shell
+
+chsh ksh  ---> k shell
+chsh bash --> bash shell 
+---------------------------------------------------------------------
+
+head is used to display first portion of a file
+
+head -4 filename ---> 1st 4 lines
+
+head filename --> first 10lines by default
+
+head -12 filename ---> 1st 12 lines 
+
+---------------------------------------------------------------
+tail is used to dispaly last portion of a file
+
+tail -1 filename ---> last one line
+
+tail filename ---> last 10 lines by default
+
+tail -12 filename ---> last 12lines of filename 
+
+---------------------------------------------------------------------
+
+> (redirect) --> used to store output of command to file
+
+ls -lrt > log1
+
+if file alreayd exists, it will overwrite content of a file.
+--------------------------------------------------------------------------
+
+>> (append)  --> used to attach output of a command to end of file.
+
+head -4 filename >> log1
+
+if file already exists, it will not overwrite content of a file.
+------------------------------------------------------------------------
+
+wc is used to count number of lines, words and chars.
+
+
+
+wc filename
+
+wc -l filename ---> used to only lines
+
+wc -w filename --> print only words
+
+wc -c filename --> count only chars
+
+----------------------------------------------------------------------------------------
+
+| (pipe) is used to pass ouput of one command to next command as input.
+
+ls -lrt | head -4 
+
+display only 4th line
+head -4 file1 | tail -1
+
+display 99th line of a file
+head -99 file1 | tail -1
+
+display 2nd last line
+tail -2 file1 | head -1
+
+
+how do you count number of words in 7th line of a file
+head -7 file1 | tail -1 | wc -w
+
+---------------------------------------------------
+
+echo "hi"
+
+echo -e "Hi\n how r u"
+------------------------------------------------------------------------
+
+more is used to display content of a file pagewise
+
+more filename
+--------------------------------------
+
+less ---> used to display content of a file pagewise, but u can scroll up and scroll down
+
+less filename
+
+----------------------------------------------------
+
+grep is used to search word or string in a file
+
+grep "pattern" filename
+
+grep -w "word" filename  --> search particular word only
+
+how do you search multiple patterns in file
+
+grep -e "linux" -e "ubuntu" -e "os" file1
+
+or
+egrep
+
+
+search lines which start with particular string or word
+
+grep "^we" file1
+
+how do you display lines end with "os"
+
+grep "os$" file1
+
+grep -c "linux" test1  ---> count number lines which have that pattern
+
+how do you display which all files have particular pattern
+ grep -R -l "linux" *
+
+
+grep -i "Linux" test1
+
+-i indicates case insensitive
+
+how do you display lines which don't have that pattern
+grep -v "linux" test1
+
+---------------------------------------------------------------------------------------------------
+
+sed --> stream editor.. 
+
+how do replace string in a file
+sed 's/linux/windows/g' file1
+
+sed  '2,7s/linux/windows/g' test1  --> replace string from 2nd to 7th line
+
+sed '$s/linux/windows/g' file1  ---> replace only in the last line
+
+sed '5,$s/linux/windows/g' file1 ---> 5th to last line
+
+
+sed -i '5,$s/linux/windows/g' file1 ---> 5th to last line
+
+-i --> to insert
+
+display only 3rd line
+
+sed -n '3p' test1
+
+sed -n '5,10p' test1
+
+sed -n '8,$p' test1
+
+
+how to delete lines
+
+sed '2d' test1
+
+sed '2,5d' test1
+
+sed '5,$d' test1
+
+print  1st and last line only 
+
+sed -n '1p;$p' test1
+--------------------------------------------------------------------------------
+
+cut is used to cut file columnwise
+
+cut -d " " -f1 data
+
+-d ---> delimiter  or separator between coloumn
+
+f1 --> 1st field
+f2 --> 2nd field
+-------------------------------------------
+awk is used to cut file coloumn wise and row wise
+
+but I use here to cut coloumn wise
+
+awk -F " " '{print $1}' filename 
+
+awk -F " " '{print $1,$3}' data
+
+-F --> field separator
+
+$1 --> 1st coloumn
+$2 --> 2nd coloumn 
+
+ls -lrt | awk -F " " '{print $6}'
+
+awk -F " " '{print $NF}' data
+
+$NF ---> last coloumn 
+
+how do you print 2nd last coloumn
+awk -F " " '{print $(NF-1)}' filename 
+
+
+ls -lrt | awk -F ":" '{print $2}'
+-----------------------------------------------
+find is used to find location of a file
+
+find . -name "filename"
+
+find . -iname "File1"
+i --> case insensitive
+
+how do you find all files which are modified 90 days ago
+
+find . -type f -mtime +90
+
+find files which are modified 2 days ago 
+find . -type f -mtime +2
+
+find all files which are modified within 2 days
+find . -type f -mtime -2
+
+find all files which are modified within 5 mins
+find . -type f -mmin -5
+
+-type f --> files only
+
+-type d --> dirs only
+
+find . -mtime +90  --> find both files and dirs
+
+find files which have permission 777
+find . -type f -perm 777
+
+how do you find files if their size is more than 1mb?
+
+how do you find empty files?
+find . -type f -empty
+
+how do you find non empty files
+
+find location of a file only in present dir
+find . -maxdepth 1 -iname "file1"
+
+-maxdepth --> used to restrict recursive search 
+
+-maxdepth 1 --> 1st level dir
+-maxdepth 2 --> 1st and 2nd level dirs
+
+how do you delete all empty files
+find . -type f -empty | xargs rm
+------------------------------
+xargs --> used to pass as arguements 
+
+---------------------------------------------------
+softlink: 
+softlink is a shortcut to a file and if you make changes in the actual file, 
+it will get reflected in the link.
+
+ln -s actualfilename linkname
+
+softlink vs hardlink
+if I delete actual file, softlink will not work. 
+but hardlink will work fine, because it points to inod of a file.
+
+hardlink:
+ln actualfilename linkname
+-----------------------------------------------------------------------
+du (disk usage) --> used to check size of a file 
+
+du -sh filename 
+
+du -sh *  --> size of all files in present dir
+
+-----------------------------------------------------------------------
+df (disk free) is used to check size of disk
+
+df -h
+df -h .
+---------------------------------------------------------------------------
+
+ps --> used to check current running processes on system.
+
+ps -ef 
+
+how do you check particular process running or not
+
+ps -ef | grep "processname"
+
+kill is used to kill process 
+
+kill -9 PID
+9 --> special signal to terminate process
+
+how do you list all processes started by particular user
+how do you kill all proceess started by particular user
+how do you kill all process by particular name (kill all processes with same name)
+------------------------------------------------------------------------------------------------------- 
+top is used to check which process taking high cpu and memory. it shows %of cpu and memory
+
+top
+
+what is htop?
+-----------------------------------------------------------------
+su (switch user or superuser ) is used to login as other user or root user
+
+su - username 
+password:
+
+------------------------------------------------------------
+sudo (superuse does)--> used to run command with root permission
+
+-----------------------------------------------------------------------
+how do you give sudo permission to users?
+
+sudo su - (login as root from ec2-user)
+
+vi /etc/sudoers
+go to last line and copy it.
+paste it and edit for different user.
+------------------------------------------------------------------------------------
+who all logged into system?
+who
+
+whoami --> shows user name
+-----------------------------------------------------
+
+useradd ---> used to add user
+sudo useradd ABC
+
+sudo passwd ABC 
+
+su - user 
+----------------------------------------------------------------------
+ssh --> used tomlogin as remote user
+
+ssh user@server2
+password:
+
+how do you ssh from one ec2 instance to another?
+
+use winscp to copy pem file to current server. change permission of pem file to 400 after copying on linux server.
+
+ssh -i Dec-2021.pem ec2-user@second-server-private-ip
+ 
+---------------------------------------------
+
+how do you copy files from oner server to another 
+
+scp file user@server:/home/ec2-user/
+password:
+
+for ec2 instances 
+
+scp -i pem file user@server:/home/ec2-user/
+
+copy file from one server to another 
+scp -i Dec-2021.pem data ec2-user@172.31.45.200:/home/ec2-user/
+
+copy back from another server to present path
+scp -i Dec-2021.pem -r ec2-user@172.31.45.200:/home/ec2-user/dir1 .
+
+--------------------------------------------------------------------------
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
