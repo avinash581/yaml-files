@@ -1,0 +1,254 @@
+INTERVIEW QUESTIONS
+1)Accolite-L1-01/05/2024
+Q) Introduce yourself
+1.      Linux command to check the listening ports in linux server
+2.      How to permanently mount a disk in linux
+3.      How to get the particular IP address entry from a log folder which can contain 100’s of files using a single linux command.
+4.      How to cut & replace multiple occurrences of an IP address inside the files.
+5.      How to increase the java process memory in linux
+6.      Have you used Route53?What is the purpose ?
+7.      Have you used EFS ? What is the purpose ?
+8.      Can you attach EFS to Windows?
+9.      From AWS console , how can you note differences between the pub and pvt subnets?
+10.  Have you worked on CloudFront?
+11.  You have an instance in the Mumbai region, how can you transfer the instance to the US east region?
+12.  What is RPO & RTO in the cloud?
+13.  How are you managing creation of resources in diff env in terraform?
+14.  How to create a new environment & switch to diff env in terraform?
+15.  What would be the way forward if you lost the .tfstate file?
+16.  Why have you used Ansible vault?
+17.  How do you pass the ansible vault secrets to the playbook ?(username & password)
+18.  Have you worked on Ansible Tower?
+19.  How to trigger build in Jenkins as soon as someone commits a code in GITHUB?
+20.  Do you manage Jenkins yourself? How do you upgrade Jenkins master without disturbing the ongoing build process?
+. 
+
+
+
+
+
+2)Cognizant L1–03/05/2024
+Give a brief introduction about yourself.
+Explain the branching strategy.
+How are you going to automate deployment to diff environments from respective branches?
+What is meant by CI/CD?
+What is JenkinsFile ? How are you using it?
+Write the JenkinsFile syntax & structure?
+What are the issues you faced in working with Jenkins?
+How does the Ansible playbook differ from ansible roles?
+What are the common modules you have used in ansible?
+How much experience do you have in the cloud? What are the services you have used for the projects?
+How do you rate yourself in terraform out of 5?
+ Write a .tf file for creating ec2 through terraform
+What is the exact use case of statefile ?
+Any experience in scripting?
+Any experience working in the financial domain?
+May I know the reason for moving to diff organization?
+3)Infinite L1-04/05/2024
+Give a brief intro about yourself along with projects you worked on , tools you have used?
+What are your daily activities?
+Can you tell more on AWS services you are working/worked on?
+Write a terraform script to create an instance in a private subnet and attach it to load balancer target group.
+Write a jenkins file to fetch a code from the branch, build a war file & send to the target server.
+Write a Dockerfile yaml to build an image.
+How comfortable are you with ansible playbooks? What are the playbooks you have written?
+Can you write a script to install the ansible role through playbook?
+Have you worked on RDS? Have you created any instances along with the databases?
+If a POD goes down what would be the command you use to check the reason?
+What AWS service application will you use if you want to stop an instance at night & start it in the morning ?
+
+4)TRUGlobal-L1-06/05/2024
+1.  Briefly Introduce yourself in couple of lines
+2.  Have you used Prometheus & Grafana as an end user or did you set it up? How did you set it up?
+3.  What command du does? Is there a similar command to du ?
+4. What does netstat does? Is there any replacement for netstat ? (socket statistics)
+5. What is a systemd? How is daemon different from process?
+6.  How do you stop a service?
+7. Why do you need a sudo privilege to stop a service?
+8. Does sudo allow you to run all root commands?
+9. Have you written a shell script? I want you to print all the even numbers from 1 to 10.
+10. How do you create a branch in git?
+11. Suppose you have cloned a remote repo & then you created a new branch locally , so will this branch be visible in remote repo if you push the changes?
+12.  Do you know what a git rebase is?
+13. If I ask you a pipeline to build, test and deploy java applications, how to do that?CI-CD stage
+14. How will the deployment to the Kubernetes cluster happen ?
+15. When deploying to Kubernetes how do you segregate diff environments inside the cluster?
+16. For your PODS how do you get the log files? Explain the configuration you make?
+
+5)o9 Solutions-L1-06/05/2024
+ 
+1. Tell me about yourself, projects you have worked on & tools you have experience in using?
+2. Have you used custom AMIs to provision instances or already existing AMI’s in the cloud?
+3. If I want to automate the creation of the Golden image process? What type of tools can you use to automate this process?
+4. I have EBS volumes attached to instances and need to automate taking snapshots & retain it for 7 days . How can you automate the whole process?
+5. In AWS if I am having some IAM policies & I want to see the history of policy changes & if needed to roll back? How can I do it?
+6. How does terraform work? How statefile
+7. Did you create the EKS cluster & how have you done it?
+8. Have you used Terragrunt modules?
+9. Do you have Kubernetes pods deployed as statefulset or stateless deployment?
+10. Is there any storage point in your application?
+11. Have you deployed redis in K8S? How did you store the data like caches even after the deployment?
+12. For deployments are you using Helm Charts?
+13. Have you configured super charts in Helm?
+14. In Ansible , you have instances info as static inventory or dynamic inventory?
+15. How frequently your dynamic inventory fetches the details of the server?
+16. In Ansible , what is the use case of block?
+17. You have multiple roles & inside it you have multiple tasks, How can you call a particular task within the role to be executed?
+18. In parent.yaml file how can you call roles?
+19. What is the use case of templates?
+20. Are you using ANSIBLE TOWER?
+21. Have you done the Jenkins setup from scratch?
+22. If I want to integrate my company people access through AD (Active Directory)? How to configure?
+23. How can you manage access to Jenkins for employees?
+24. Versions of Ubuntu you used? Have you done any OS migrations?
+25. I want a server to run a script every time the system reboots. How can you automate this script?
+26. I have a log folder and I want to delete the files which are 30 days older ? What command can I use?
+27. If I have a server & through Prometheus you are collecting metrics . So I want an alert mechanism to send an email whenever the threshold is breached . How can you configure this?
+28. If you get an alert that server memory is breached? What services will you check & how will you troubleshoot?
+
+
+
+6)Infinite-L2-06/05/2024
+
+Tell me about your experience in Devops Tools & AWS.
+How many projects have you worked on in the EKS cluster?
+I want to use EBS based storage & for some EFS based storage.What additional things need to be done to achieve this? What set of functionality to be added to the cluster?
+Do you know the ALB controller? What configuration do you use to attach an ALB controller to your cluster?
+What is the functionality of the ALB controller?
+Have you written any Ingress resource.yaml?
+Have you written the Kubernetes HELM chart? Inside the helm chart I need to  include one dependency helm chart for Redis? So what is the way to include any dependency in HELM charts.
+What is the main purpose of maintaining the templates?
+Have you worked on ARGOCD?
+What type of Autoscaler have you used at the cluster level?
+Have you know any sort of Service Mesh within the cluster?
+For how many years have you worked completely on the EKS cluster?
+Do you know how many types of provisioners are in terraform?
+I have an existing EC2 & inside that I need to run some commands inside it through terraform. How can I do it?
+What is the use case of null resource in terraform?
+ Are you comfortable in writing terraform scripts based on scenarios?
+I need 3 s3_buckets to be created within a single resource block. Write a script.
+Suppose I want to 300 instead of 3 s3 buckets later, what parameterization i can do in this resource block?
+Suppose I have 3 names already & I want these names as my bucket-name after creation ? How can I achieve this?
+ Suppose we have 2 accounts in AWS A&B, in account A i have created db password in secrets manager & i want this secrets to be accessed through Account B. How to do it?
+Suppose you are the admin of EKS cluster? Some QA team members want to access the cluster to run kubectl commands ? How will you provide them the access?
+Have you worked on Prometheus & Grafana or did you just set it up?
+
+
+7)TRUGlobal-L2-06/05/2024
+Tell me about your experience , how you can fit in here?
+You have 50 projects in subversion & you need to migrate to git. You have to retain all the branches, commit histories & versions? How do you go about doing it?
+What is the difference between git merge & git rebase?
+Can you explain what would be the best CI/CD pipeline?
+If you want to expose your service in Kubernetes to the outside world ? How do you go about it?
+What is CIDR in networking?
+What are provisioners in terraform?
+Can you write a shell script or python script? Write a code that would reverse a string?
+Do you know the Fibonacci series? Write a script to generate fibonacci series?
+
+8)Automation cloud_SLK–L1–06/05/2024
+Introduce yourself & tools you have worked on.
+For what application you have built docker images.
+What have you provisioned using Terraform?
+Have you done any migration ?
+What is the depend_on use case in Terraform?
+What is the use case of count? How is it different from for_each ?
+Tell me different types of provisioners. What are their use cases?
+Can you tell me the modules? What is the use?
+For example i have code in git repo , how can i call it inside main.tf files?
+What would you do to call these modules if they are present locally?
+ Difference between Cloud Formation & terraform?
+Have you worked on Cloud Formation?
+You have created a VPC using cloud formation. Now you need some changes/upgrades to make to that VPC through terraform. How can you do it?
+Explain VPC architecture & its components.
+Have you worked on AWS Lambda? What are the diff languages?
+Which version of Python have you used in AWS Lambda?
+What are the limitations of AWS Lambda?
+What have you done in ansible? For what purpose have you written playbooks
+What is the significance of ‘register’ in Ansible?
+Do you know the different types of engines supported by RDS?
+Are you working currently ? Are you good at Python ?
+
+
+9)TEKSystems-L1-07/05/2024
+Introduce yourself & tools you have worked on.
+Can you explain the project which you have worked on recently
+What is Terraform?
+What is the difference between apply & refresh command.
+What is the state file?
+What is ELB?Types of load balancer?
+What is git rebase?
+Commands to push the code into a remote repository.
+What is the branching strategy?
+Launched an EC2 instance but not able to connect to the instance what might be the reason?
+ I have 3 accounts A,B & C , Bucket is in A, I want to push the logs from the instances in B & C to the bucket in A? How to do this?
+How to manage diff env in terraform?
+What is Grafana?What are key features?
+What are the data sources?
+Role of plugins to Grafana?
+How do you secure Grafana ? Is it open source?
+How do you backup & restore dashboards?
+Different panels available in Grafana
+How to create a monitor for CPU utilization in Grafana?
+What are custom dashboards?
+Is it possible to integrate Grafana with Azure?
+Difference between monitor & dashboard?
+What is Alerting?
+How to authenticate VS code with AWS?
+Command to get the pod in K8S?
+What are Kubernetes Secrets?
+What is a Helm Chart?
+Can you explain the statefulset?
+What is Kubernetes Ingress?
+What is RBAC in K8s?
+Difference between containers & VM.
+What is an overlay?
+
+11)TRUGlobal-R3-(Client round)
+Introduce yourself
+Do you think is there any difference between git & Github
+How to recover a deleted branch in git?
+Difference between git rebase & git merge.
+Difference between git fetch & git pull.
+Version of Kubernetes you are working.
+Service Mesh in Kubernetes? What is it?
+What is RBAC in Kubernetes?
+In the K8S cluster, you are noticing a pod not working?What approach would you take?
+What might be the reasons for POD evicting from NODE?
+How good are you at LINUX?
+Suppose you have a custom service and you want to run that service every time after reboot? How can you automate it?
+Difference between soft link & hard link
+The web app in the server started to lag , there has been a user complaint, you checked all the memory , cpu & hard disk utilization . What can be the issue & how do you go about it?
+What is a daemon process?
+What is the Orphan process?
+How can you execute the script in the background
+Have you ever provisioned Jenkins from scratch
+How did you upgrade jenkins?Tell me the steps
+Write a shell script to reverse the words in a sentence?
+Write a command to delete the files in the current directory which are 30 days old.
+12)Trianz Digital-L1-08/05/2024
+Introduce yourself, roles & responsibilities
+Write a shell script to monitor your resource usage of the server.
+Write a shell script to take the backup of a folder.
+What sort of services are you familiar with?
+What are your daily activities in AWS services?
+What is a LANDING ZONE in AWS Services?
+How would you design a LANDING ZONE?
+What AWS services can you choose to migrate a server?
+How would you manage the networking of multi accounts in AWS?
+ How would you secure data during & after AWS migration?
+Are you aware of AWS Migration Hub?
+How would you handle disaster recovery in AWS?
+What is Autoscaling ? How does it work?
+How do you manage the state of terraform?
+How do you manage concurrent updation of state file?
+How do you handle the sensitive data in terraform?
+What is your strategy for upgrading versions of terraform?
+How many types of load balancers?Explain the differences
+How do you authenticate to AWS with terraform?
+How did you set up the EKS cluster through terraform?
+Can you describe CI-CD wrt to AWS services
+How can you secure multi tier app deployment through terraform?
+How will you utilize the policies in terraform?
+What type of logs get stored in Cloud watch logs?
+Tell me 5 best practices to implement Cloud Optimization?
+How do you handle terraform config files conflicts inside GIT? 

@@ -1,0 +1,260 @@
+Happiest Minds–L1
+
+Introduce yourself & daily activities
+Give me an example for using shell scripting.
+What is the use of going for shell script for resource monitoring when you can run those in single commands
+Give me some scenarios where you used cloudwatch to monitor application?
+For what resources can you generate cloudwatch logs?
+How will you be able to identify log groups belonging to a particular resource?		????$$$$$		dashboard
+How can we change the instance type?
+Consider we have an RDS instance in the prod environment and a Redshift cluster in a non prod environment. How can we move the data from RDS to Redshift		????$$$$$
+What is your working experience in the EKS cluster?		////////
+Common issues you faced when working with EKS cluster?		????$$$$$
+Any exposure for CloudFormation?
+What is the need of peering in VPC?
+How many VPC can be connected to an internet Gateway?
+Difference between VPC peering & VPC endpoints
+Write a dockerfile which you have used
+Is there any alternative instructions for the dockerfile you have written.
+Is there any difference between COPY & ADD, ENTRYPOINT & CMD.
+What pipelines have you used?Write one pipeline for me
+What is difference between agent any & agent none
+Explain me about ReplicaSet in K8S
+Explain the Kubernetes architecture
+What resources have you created using Terraform
+Explain how you created the EKS cluster using Terraform briefly.
+
+VCO-L1
+
+From the Devops point of view what happens when you enter a URL in the browser.
+What are the issues if an application is not running?			??????$$$$$$$$$$
+Difference between git clone & git checkout
+Difference between git pull & git fetch
+Explain the branching strategy ?
+Explain the CI-CD pipeline.
+How many microservices were there?				///////////
+Explain the DOCKERFILE
+Difference between POD and containers
+Difference between workload & application in Kubernetes.		??????$$$$$$$$$$
+How to restart a pod?						-----
+Different types of Services in K8S.
+What version of EKS?				/////////
+Terraform lifecycle.Explain
+Have you used IRSA?				??????$$$$$$$$$$
+Any Database exposure?			////////
+Have you used Prometheus & Grafana? Have you created alerts?		/////////
+
+CapeGemini-L1
+
+Introduce yourself & explain day to day activities
+What AWS services for automation are you using?		///////
+What is the tenancy module for EC2?			??????$$$$$$$$$$
+Best suitable for 6 months workload
+You want to launch an instance with a particular instance type but in that region you are not having that instance type? How would you go about that		////////////
+What would be the cost cutting way to utilize AWS?			/////////
+Suppose i dont use auto scaling, & my instance goes down. How can I spin up new instances?			??????$$$$$$$$$$
+Even if you configure these settings in Cloudwatch to launch a new instance.It might not even launch an instance? What could be the possible reason?
+How do you solve the performance issues of a web application hosted in EC2 instances?			/////??????$$$$$$$$$$
+How are you gonna partition a disk in Linux?		??????$$$$$$$$$$
+How do you upgrade the Terraform?
+Consider you have 50 resources to be created in terraform configuration file & you have written the configurations. But now only 15 resources have to be created out of 50 during the terraform apply. How can we achieve this?
+What are built -in provisioners in Terraform?
+
+AMADEUS LABS–L1
+
+Explain the roles & responsibilities you have managed in your experience.		///////////
+Can you tell me one most challenging part of your work			////////
+What is the role in your team					//////////
+You have 10 commits in the staging branch , lets say you only have to move 8 commits into prod env. How can we achieve this in GIT? You cannot undo the commits since those are required for your staging env.		---> chery-pick
+What is the difference between Kubernetes POD & a Docker container
+Difference between docker image & container
+How do you optimize the layers in Docker images.
+Having more image layer is best or less layers?Why?		
+How do you perform security vulnerability check for images?
+Difference between SonarQube & Trivy
+Write a portion of jenkins pipeline on sonarqube where you highlight critical  vulnerability		???????????	
+Command to get the present namespace in kubernetes
+Command to change the particular namespace
+Define a list of integers in shell script & print out the sorted list.
+What are the maven commands to build artifacts
+How the dependencies for the build will ne managed ?
+How are these dependencies checked in SonarQube?			-------//////
+How much LINUX commands you are comfortable with?
+Significance of multistage docker builds
+
+
+TRIANZ_DIGITAL
+
+Introduce your roles & responsibilities in couple of lines			~~~~~~~~~~~```
+How will you write a terraform code for db instance in th private subnet to have connection to the internet whereas any request from the internet has to be denied.	??????$$$$$$$$$
+Explain the difference Between NACL & SGs
+Advantages of VPC peering & Transit Gateway
+Explain the module structure of your production workload in terraform				////////////
+Why do you need DynamoDB table?
+Difference between terraform init & terraform plan
+Explain the Kubernetes Architecture.
+Difference between PODS & CONTAINERS
+Explain difference between deployment & stateful set 
+How do you resolve a merge conflicts?
+
+VCO-L2
+
+Introduce yourself , roles & responsibilities
+Which cloud & which services you used?
+How do you provision these resources using terraform?
+Where do you store your state files?
+How do you import existing AWS resources to your terraform?
+Explain the CI-CD setup
+Who created the EKS cluster			///////////////
+Have you faced any issues while deployment issues?			??????$$$$$$$$$
+Have you done the upgradation of cluster?				??????$$$$$$$$$
+What are the metrics that you are monitoring in Grafana
+Are you familiar with RDS Database?		//////////
+Are you good writing in YAML files
+
+HCL_TECH–L1
+
+Explain the roles & responsibilities you have managed in your experience.
+Command git config. What is the use of it?	--> to set user info, default text editor
+How do you practically resolve the merge conflict?
+What is git ls-tree?
+How do you manage git cherrypick
+What is the difference between git fetch and git merge
+How do you delete the remote branch of remote from the local repo?
+What kind of tags you have used in your project			/////////////
+What is the difference between bash shell & cshell?
+What do you mean by shell variables
+What types of variables in shell script? (System defined)
+What is the soft link & hard link
+What is the role of load balancer in Kubernetes?
+What is Kubernetes operator ?				??????$$$$$$$$$
+How many nodes are available , which nodes are available?
+What are the types of external networking provided to Kubernetes?		??????$$$$$$$$$	
+What are PODS?
+What are sidecar containers?
+How can you scale the Kubernetes cluster?
+Difference between Deployment controllers & Statefulset controllers
+What is kubectl apply & How it works
+What are the ways to install jenkins?			??????$$$$$$$$$	
+How can you move the jenkins home directory to a different folder 		??????$$$$$$$$$
+How do you upgrade a server with zero downtime?			??????$$$$$$$$$
+
+Amadeus-(L2 + HR)
+Let's start with your experience
+Explain the CI/CD pipeline what you have configured till the deployment
+What are the advantages of Multistage docker files?
+How much experience do you have in provisioning Your cloud services?		/////////////
+What is the recent things you have done				/////////////////
+Walk me through the steps of automating infra provisioning through terraform
+How does terraform work ?				??????$$$$$$$$$
+Between Ansible & terraform tell me one pro & cons of both		??????$$$$$$$$$
+You have experience with ELK stack & observability space.		?????????????
+Any experiencing with security side of things , security tools as such?		??????$$$$$$$$$
+Can you share more details about TRIVY? Advantages of using it
+
+
+
+Encora-L1
+
+Introduce yourself 
+How do you host your application & make it highly secure and highly available using only AWS services.
+How the VPC structure looks like?
+Route53 can create health checks?
+What are the types of Load balancers & the use cases of it
+I have 2 AWS accounts , I need to transfer AMIs from one account to another. How it can be done?		??????$$$$$$$$$		
+Explain the different storage classes in S3 buckets & explain the difference between them
+How many S3 buckets can be created per account?
+What are ELASTIC IP addresses & use cases of it			??????$$$$$$$$$
+I have attached an elastic IP address for EC2 & how much it would cost after a month		
+Have you used AWS Lambda & in what capacity?
+How do you trigger a lambda function
+Explain the difference between CloudFormation & terraform		??????$$$$$$$$$
+In terraform what is the statefile & when it will be created ?
+What is the need for state locking in terraform?
+How do you bring resources created through console into your terraform managed statefile?
+How do you manage different env in terraform?
+How to run a script through terraform?			??????$$$$$$$$$
+How do you integrate your Github with the Jenkins pipeline?
+Difference between types of pipeline
+Explain the master-slave architecture in jenkins
+If a build fails will the pipeline abort? 			??????$$$$$$$$$----
+How can you provide runtime variables in the jenkins–both global & local.
+Mention some ansible ad hoc commands
+For what purpose Vault is used
+Explain the containerization mechanism
+Docker is written in which language
+Write a format for Dockerfile
+Write a pipeline script
+Write a shell script to update the packages in a server
+How do you scale in Kubernetes
+How to monitor always the POD is running or not
+Difference between Docker Swarm and Kubernetes
+What are container orchestration platforms?
+Does Kubernetes provide any feature to store sensitive databases
+Which OS have you worked on? Mention daily used commands 
+Can you tell me some production issues which you faced & it was challenge to get it resolved
+Are you managing any incident tools?			??????$$$$$$$$$--> PagerDuty, Service Now, Data Dog
+Explain the difference between DEVOPS & SRE		??????$$$$$$$$$
+Any reason for looking for a change of organization.
+
+
+7-Eleven–L1
+
+Explain the roles & responsibilities you have managed in your experience.
+If i give a new AWS account how will host your app using AWS services
+How many subnets will you create inside VPC?			///////////////
+Will you attach a NAT gateway to db instances in a private subnet?		///////////////
+How will you plan the governance of your AWS account		????///////////
+What is the trust relationship inside the roles ?		??????$$$$$$$$$	
+How do you set up cross account access in AWS?			??????$$$$$$$$$
+Can i use a single load balancer to divert the traffic to 10 microservices in the backend
+What is lifecycle policies for S3 buckets?How can we configure
+I want a database instance in a private subnet to access some files in S3 bucket. What are the ways to achieve this?		????????????????????
+Can you run each of the stages in pipelines on different servers?
+What exactly is dynamic slaves in Jenkins? How to configure it?			??????$$$$$$$$$??????$$$$$$$$$
+Explain basic CI pipelines & CD pipelines
+What does the terraform init command do?
+How will you manage the state files?
+What is the use of lock ?
+For some reason someone modified the resource created through terraform in the console, how can you bring those changes into a terraform managed statefile?
+How will you organize your terraform config files to deploy 3 tier application in AWS
+How will you segregate these config files ? will all these go in a single pipeline			??????$$$$$$$$$////////
+Have you used error handling in Ansible?		??????$$$$$$$$$
+What are Ansible handlers?			??????$$$$$$$$$
+What kind of configuration do you use in ELK to push the logs?		??????$$$$$$$$$
+What is the function of ELASTIC search here?
+Have you worked on any security services? Which deals with application security?		///////////////??????$$$$$$$$$
+Can you give me high level architecture of the EKS cluster & how your application is running.
+How are you isolating the microservices inside your cluster? Using NodePort ?		??????$$$$$$$$$
+In docker what is the difference between COPY & ADD.
+Difference between ARG & ENV 
+Networking in docker , explain.
+Have you worked on dynamic inventory? What is dynamic inventory?
+How does Ansible fetch the instances?			??????$$$$$$$$$
+How can you group these servers to run playbooks in batches?		??????$$$$$$$$$
+
+25)ConstructivIq–L1–15/05/2024
+Tell something about yourself.
+How many services do you have in deployment?			??????$$$$$$$$$ 	k8s, ArgoCD, Flux
+I hope there is interdependency between them? What is the mode of communication between micro services inside the cluster?
+How do you trace which service has a problem when it's not working?		///////??????$$$$$$$$$//////
+How comfortable are you in writing PromQL queries		////////////
+What is the best cluster for running 5 microservices		///////////
+Why are leaving your current org?			////////////
+
+26)XactlyCorp-L1-15/05/24
+Introduce yourself with roles & responsibilities you have assumed
+How much do you rate on linux?
+How do you schedule a cron job?How many fields will be there?
+I need to find the error logs & i don't know the path? How will you do that?
+How do you use Disk utilization alerts?			??????$$$$$$$$$
+What steps do you take to clear out the disk space?		??????$$$$$$$$$
+If you want to compress the log files?			??????$$$$$$$$$
+How to check the namespace in kubernetes?
+How will you check the logs of particular pod
+If any of the POD is not terminating from a namespace , how will you clear it?			??????$$$$$$$$$
+ Are you setting up an EKS cluster ?
+What is the concept of taints in kubernetes?
+What is the difference between liveness & readiness probes?
+Can you write a shell script assuming there are 10 servers & check available disk space in those 10 servers.		??????$$$$$$$$$
+Write this using ansible as well?

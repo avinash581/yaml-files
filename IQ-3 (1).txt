@@ -1,0 +1,303 @@
+ENCORA-L2
+
+Explain the projects you have worked on in your experience?
+Explain the NAT Gateway usage?
+What does stateful firewall mean?
+What is cloudTrail is used for in AWS?
+What is SQS service used for?
+Write a simple dockerfile for python based application
+Why did you use different stages in your dockerfile
+What is the difference between entrypoint & CMD
+Do you know equivalent to these in Kubernetes? 
+Difference between CLUSTERIP & NODEPORT service?
+What is a daemonset resource?
+What is a statefulset controller?
+What are annotations in Kubernetes?
+How can you autoscale a cluster?
+What is a data block in terraform?
+What is the difference between variables and locals in terraform?
+Why do you implement locking mechanism to your state files
+Command to see who have logged in users in linux machine
+Difference between soft link & hardlink
+Command to check free ram
+What is the concept of swap space ?
+What is the significance of /etc/fstab ?
+What is the UID of root user in linux?
+
+Visionet-L1
+
+EXplain the roles & responsibilities handled.
+How did you configure the ELK stack?
+Do you know Python for automation part
+Scenario: We created an ec2 instance & forgot to check the encryption for EBS volumes. Later how can I encrypt this existing data in the eBS?
+In a load balancer if you get 502 errors ,what will be your approach?
+Explain the components of VPC 
+Instance in private subnet wants to communicate with S3 bucket w/o NAT gateway?How can it be done
+Suppose I have a domain in GOdaddy , how to route traffic from other domain to AWS then how can I do it?
+Different types of storage classes in s3 buckets
+How will you automate the triggering CI process & after CI process you need to trigger the CD process in groovy script ?
+What do you mean by shared libraries?How do you configure it with your pipelines?
+Suppose you need to skip a particular maven goals what would be the command
+Suppose you have to move files from one slave to another slave in Jenkins , what can be done?
+What are the necessary roles that have to be attached to worker node groups during EKS cluster?
+What is the role of VPC CNI?
+Scenario: I need to obtain the latest AMIs in 2 regions & create 2 instances in 2 regions through the same config file in terraform? How to do it?
+Scenario: I need to provision a server & install jenkins in those. Give me the blocks which you use to achieve this & retrieve the public ip of jenkins server
+What will you do to set up a Highly available & scalable 3 tier application? Just explain the AWS resources which you use
+Script: Print the numbers from 1 to 50 & for each of the multiples of 5 it should print Hi & each of the multiples of 7 it should print “hello”
+Suppose i need to take input from the keyboard, what changes will you make in the script
+If provided an opportunity will you be able to create python scripts?
+
+EZinformatics–L1
+
+Introduce yourself and as a SRE what is your responsibility
+Have you used EMR?
+Explain what a VPC is?
+Explain diff between public subnet & private subnet
+Will you provision DynamoDb in public or private subnet?Why?
+What about S3 bucket? Will it be placed inside public or private subnet?
+How can an instance in private subnet to access S3 bucket?
+What is cold start in AWS lamda? How can you avoid it?
+When you provision EKS cluster , how to ensure high availability ?
+Can you explain what a disaster recovery is?
+What exactly a disaster is?
+Explain the difference between high availability & disaster recovery
+What is partition key in Dynamodb table?
+Do you know what global databases are?
+Explain the steps to deploy java code from repository in EKS cluster
+
+Nuvento–L1
+
+Introduce yourself, roles & responsibilities & daily activities
+How will you connect an application to a database in different account & as well as to S3 bucket in different account
+Explain how would you setup a Endpoints & then Transit gateway
+Have you worked on Lambda functions? How can i trigger Lambda function
+How to know the reasons for LAMBDA function timeout?
+One team has deleted a table in RDS , how can I restore that table?
+Have you worked on API Gateway
+How can I access my application through domain name rather than IP addresses?
+IN ASG i have max size is 5 & desired is 3 , now i want a new instance to pop up with a new AMI ,so i terminated one instance but a new instance is not popping up?Why?
+What is sticky session in load balancers
+Why will I get a 404 error for some requests while accessing the app behind load balancers?
+What terraform version are you using
+How to import resources through terraform
+How can I deploy an app to a particular node in EKS?
+How can I access S3 buckets through the cluster?
+What is the difference between roles & playbooks?
+How to establish connection with remote servers for ansible
+Through cloudwatch how can you send alerts to email if an ACCESS or SECRET key gets deleted by someone?
+
+Innominds-L1
+
+Brief yourself , roles & daily activities
+What is the recent issue you have solved in your project
+How will get notified that a particular microservice is not working
+What Git stash will do?
+Explain the workflow of terraform pipeline
+Where is your jenkins hosted?In which environment
+How are your AWS accounts segregated?
+Difference between init containers & side car containers with use case
+Are you using INgress and service mesh
+Can you explain the network traffic accessing your application as an end user?
+What is Deployment, Daemonset & Statefulset controllers
+What are the scaling policies for deployment you used?
+How will you create a service account in cluster & provide access to various AWS services within your account
+How do you expose the objects to the public in S3 buckets in a secure manner?
+Why exposing the objects publicly is not a best practice?
+Difference between pipeline, freestyle, multibranch pipeline
+Difference between CMD & ENTRYPOINT
+Have you worked on Cost optimization
+Can you explain helm charts & whats the use?
+Give me the command to deploy application using helm chart
+
+Talentica–L1
+
+Introduce yourself
+What work or role did you perform in TCS as it is your career start?
+Were you doing only Ci-CD jobs in TCS for 3 years?
+What is the role now in the present company?
+Give an overview of your application architecture in AWS cloud.
+Explain to me how Ingress controllers work?
+Have you written the YAML files for Ingress resource
+Consider you have been given 20 microservices to deploy to an EKS cluster . Give your thoughts on how you will do it?
+Explain how you will create a helm?
+What are CRDs in Kubernetes?
+Explain to me the Kubernetes architecture?
+How do you do capacity planning? What is the size of your EKS cluster
+When cluster autoscaler scale the nodes where do you specify the number how much to scale?
+What is PV and PVC in kubernetes?
+How do you provision these infra in AWS cloud
+
+7-Eleven–L2
+
+Introduce yourself, roles & responsibilities
+What exactly was your role in TCS? Explain me tasks which you have performed over there
+How to expand the VPC?
+How can you segregate the public & pvt subnet?
+Regarding s3, I am trying to access it from an instance but no use? How to trouble-shoot. Any thoughts 
+What do we define in the security groups?
+What are Endpoints?
+How many types of Load balancers?What are the difference
+Why does it not support RPS like NLB? 
+What is cross zone load balancing in ALB?
+What are different security services you are aware of ?
+How will you secure a 3 tier arch in AWS? What services do you use ?
+Different ways to connect terraform with AWS?
+Anything that you want to share an achievement in your organization.
+Why is ARGOCD most famous for?
+Why do you want to leave your company
+Describe yourself!!!
+Who provides work to you?Are there any junior people?
+If junior people come to you for technical clarity & you dont know about it. How will you respond?
+
+
+
+DishNetwork–L1
+
+Introduce yourself & tools you have worked on.
+For what application you have built docker images.
+What have you provisioned using Terraform?
+Have you done any migration ?
+What is the depend_on use case in Terraform?
+What is the use case of count? How is it different from for_each ?
+Tell me different types of provisioners. What are their use cases?
+Can you tell me the modules? What is the use?
+For example i have code in git repo , how can i call it inside main.tf files?
+What would you do to call these modules if they are present locally?
+Difference between Cloud Formation & terraform?
+Have you worked on Cloud Formation?
+You have created a VPC using cloud formation. Now you need some changes/upgrades to make to that VPC through terraform. How can you do it?
+Explain VPC architecture & its components.
+Have you worked on AWS Lambda? What are the diff languages?
+Which version of Python have you used in AWS Lambda?
+
+o9solutions–L2
+
+Explain the roles & responsibilities you have managed in your experience.
+If i give a new AWS account how will host your app using AWS services
+How many subnets will you create inside VPC?
+Will you attach a NAT gateway to db instances in a private subnet?
+How will you plan the governance of your AWS account
+What is the trust relationship inside the roles ?
+How do you set up cross account access in AWS?
+Can i use a single load balancer to divert the traffic to 10 microservices in the backend
+What is lifecycle policies for S3 buckets?How can we configure
+I want a database instance in a private subnet to access some files in S3 bucket. What are the ways to achieve this?
+Can you run each of the stages in pipelines on different servers?
+What exactly is dynamic slaves in Jenkins? How to configure it?
+Explain basic CI pipelines & CD pipelines
+What does the terraform init command do?
+How will you manage the state files?
+What is the use of lock ?
+For some reason someone modified the resource created through terraform in the console, how can you bring those changes into a terraform managed statefile?
+How will you organize your terraform config files to deploy 3 tier application in AWS
+How will you segregate these config files ? will all these go in a single pipeline
+Have you used error handling in Ansible?
+What are Ansible handlers?
+What kind of configuration do you use in ELK to push the logs?
+What is the function of ELASTIC search here?
+Have you worked on any security services? Which deals with application security?
+Can you give me high level architecture of the EKS cluster & how your application is running.
+How are you isolating the microservices inside your cluster? Using NodePort ?
+In docker what is the difference between COPY & ADD.
+Difference between ARG & ENV 
+Networking in docker , explain.
+Have you worked on dynamic inventory? What is dynamic inventory?
+How does Ansible fetch the instances?
+How can you group these servers to run playbooks in batches?
+
+Talentica-L2
+Let me know your educational background & brief work history
+In TCS which domain did you exactly work for?
+What was your role? Size of team including all environments
+In Sasken how many projects you worked on?
+Explain the project which you are currently working on?
+How many members in your team right now including all the dev & testing included.
+Is there any lead in the team? Are you the senior person in the group?
+How do you rate yourself within the team?
+Why did you resign ? What was the motivation?
+What is your current designation?
+What would be the next role Sasken would be assigned after the next promotion.
+Why is HTTPS better than HTTP?
+What type of attacks will it prevent?
+Consider your web application is hosted in Tomcat Server. Someone kills the tomcat process on the server. As an end user of an application what would be the outcome?
+Who will send those 404 Errors?
+Such notification should get alerts to the Operation team /monitoring team, how can you do that?
+Now your application is sending 404 errors, it's not down but now you need to have alerts specifically for this? How can you do this?
+Can you write a PromQL expression for this configuring error rate?
+What is the scale of servers inside the EKS for your application?
+What is the size of the cluster?
+What is the difference between Series & Tseries instances
+Is your application memory intensive & CPU intensive
+Typically on a single node how many micro services do you run?
+Why are companies in Bangalore not in your preferences?
+Why do you want remote work?
+What kind of Databases that you have monitored or managed in your company?
+Why do you people deploy in Multi AZ architecture?
+Are you not using CloudFront?Why?
+Where do you see yourself down the line in 4 yrs?
+
+Nuvento-L2
+
+Write a dockerfile for java using Multi stage build
+What is the significance of multi stage builds?
+In this multistage way how further can you reduce the size of the image?
+Difference between jdk & jre
+What will be the size of the image ?
+What is alpine? If not alpine which distros by default?
+Suppose if you miss EXPOSE instruction what would be the result
+In terms of security what optimization can be done within Dockerfile.
+Command to build a docker image
+How are you providing version to the docker image
+Write a shell script to pull the artifact Id from pom.xml & use it as an image version.
+Did you create the standardized pipeline
+Why are you using Prometheus & Grafana for metrics & ELK for logs?
+Can only one tool be used for both?
+How to dynamically get the ids of EC2 instances so that it can used to stop instances using Lambda functions?
+Why didn't you administer the Kubernetes Cluster?
+What is the process of enabling RBAC in kubernetes?
+What are the components of RBAC
+Explain me the service types in K8s
+How will the traffic from users enter into the kubernetes cluster? Explain each & every stage of network packet transfer
+
+
+7-Eleven–L3
+
+Introduce yourself
+What are the tools you have experience in
+How did you solve any production issues?
+How were you monitoring your cluster?
+In TCS what was your role?
+Why are you leaving your company now?
+
+Galaxe–L1
+
+Introduce yourself
+Did you work on any Linux services in on-prem
+Can you explain about Git cherry pick
+For the managing releases how are you managing the hierarchy
+In Jenkins, how are you connecting to servers to perform each stage?What are diff stages?
+Do you know how to maintain the Nexus repo?How to clean the old artifacts in the Nexus Repo?
+How do you maintain Credentials in Jenkins
+How are you maintaining jenkinsfile?
+How do you maintain multiple java versions?
+How are you managing yaml files to deploy microservices? How will load balancers come into the picture?
+What is the role of VPC in the EKS cluster?
+Within the cluster how to provide access to s3 bucket & RDS ?
+How do you maintain backups of databases?
+In what capacity have you used AWS Lambda?
+How are the volumes managed inside the EKS cluster?
+Where have you used bash scripts?
+
+
+Innominds–L2
+
+Explain Briefly about yourself & tech stack
+How many services are there in K8s cluster
+I want only frontend service not to access database service & backend services to access database pods ? How to achieve this
+Have you used terraform only for AWS? How was your provision?
+In modules if you don't write output blocks, what will happen?
+What are the plugins you used in Jenkins
+Did you upgrade any k8s cluster
+What was your deployment strategy in the cluster
+
